@@ -5,7 +5,12 @@ const morgan = require('morgan');
 const app = express();
 
 //App setup
+//logging
+app.use(morgan('combined'));
+//parse incoming requests
+app.use(bodyParser.json({type: '*/*'}));
 
+//
 
 //Server setup
 const port = process.env.PORT || 3090;
